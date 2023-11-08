@@ -21,6 +21,7 @@
     <button onclick="changeColor(this)">Change Color</button>
     <button onclick="changeBackgroundColor()">Change Background Color</button>
     <button onclick="displayText()">Display Text</button>
+    <button onclick="logToConsole()">Log to Console</button>
 
     <input type="number" id="num1" placeholder="Enter first number">
     <input type="number" id="num2" placeholder="Enter second number">
@@ -34,11 +35,11 @@
         }
 
         function changeColor(button) {
-            button.style.backgroundColor = "#e74c3c"; // Change button color upon click
+            button.style.backgroundColor = "#e74c3c";
         }
 
         function changeBackgroundColor() {
-            document.body.style.backgroundColor = "#f0f0f0"; // Change background color
+            document.body.style.backgroundColor = "blue";
         }
 
         function displayText() {
@@ -53,11 +54,14 @@
                 const product = num1 * num2;
                 document.getElementById('display').innerText = `The product is: ${product}`;
 
-                // Change color of the multiplication button to green
                 document.getElementById('multiplyButton').style.backgroundColor = "green";
             } else {
                 document.getElementById('display').innerText = "Please enter valid numbers.";
             }
+        }
+
+        function logToConsole() {
+            console.log('Button clicked: Logging to console!');
         }
     </script>
 </body>
