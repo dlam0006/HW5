@@ -3,7 +3,6 @@
 <head>
     <title>JavaScript Functions</title>
     <style>
-        /* Add some basic styles for the button */
         button {
             padding: 10px 20px;
             font-size: 16px;
@@ -15,48 +14,44 @@
     </style>
 </head>
 <body>
-    <h1>JavaScript Functions</h1>
+    <h1>Homework 5</h1>
 
-    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="showAlert()">Pop-up Message</button>
     <button onclick="changeColor(this)">Change Color</button>
-    <button onclick="changeBackgroundColor()">Change Background Color</button>
+    <button onclick="changeBackgroundColor()">Change Page Color</button>
     <button onclick="displayText()">Display Text</button>
 
-    <input type="number" id="num1" placeholder="Enter first number">
-    <input type="number" id="num2" placeholder="Enter second number">
-    <button onclick="multiplyNumbers()" id="multiplyButton">Multiply</button>
+    <input type="number" id="num1" placeholder="First Number">
+    <input type="number" id="num2" placeholder="Second number">
+    <button onclick="multiplyNumbers()" id="multButton">Multiply Numbers</button>
 
     <p id="display"></p>
 
     <script>
         function showAlert() {
-            alert('Hello, this is an alert!');
+            alert('Hello Professor!');
         }
 
         function changeColor(button) {
-            button.style.backgroundColor = "#e74c3c";
+            button.style.backgroundColor = "pink";
         }
 
         function changeBackgroundColor() {
-            document.body.style.backgroundColor = "blue";
+            document.body.style.backgroundColor = "light green";
         }
 
         function displayText() {
-            document.getElementById('display').innerText = "JavaScript is fun!";
+            document.getElementById('display').innerText = "Voila!";
         }
 
         function multiplyNumbers() {
             const num1 = parseFloat(document.getElementById('num1').value);
             const num2 = parseFloat(document.getElementById('num2').value);
-
-            if (!isNaN(num1) && !isNaN(num2)) {
-                const product = num1 * num2;
-                document.getElementById('display').innerText = `The product is: ${product}`;
-
-                document.getElementById('multiplyButton').style.backgroundColor = "green";
-            } else {
-                document.getElementById('display').innerText = "Please enter valid numbers.";
-            }
+            
+            const product = num1 * num2;
+            document.getElementById('display').innerText = `The product is: ${product}`;
+            document.getElementById('multButton').style.backgroundColor = "green";
+    
         }
     </script>
 </body>
