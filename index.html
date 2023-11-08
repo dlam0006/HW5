@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple JavaScript Functions</title>
+    <title>JavaScript Functions</title>
+    <style>
+        /* Add some basic styles for the button */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>Simple JavaScript Functions</h1>
+    <h1>JavaScript Functions</h1>
 
     <button onclick="showAlert()">Show Alert</button>
-    <button onclick="changeColor()">Change Color</button>
+    <button onclick="changeColor(this)">Change Color</button>
     <button onclick="displayText()">Display Text</button>
     <button onclick="countDown()">Countdown</button>
     <button onclick="generateRandomNumber()">Random Number</button>
+
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="multiplyNumbers()">Multiply</button>
 
     <p id="display"></p>
 
@@ -19,8 +34,8 @@
             alert('Hello, this is an alert!');
         }
 
-        function changeColor() {
-            document.body.style.backgroundColor = "lightblue";
+        function changeColor(button) {
+            button.style.backgroundColor = "#e74c3c"; // Change button color upon click
         }
 
         function displayText() {
@@ -43,68 +58,18 @@
             const randomNumber = Math.floor(Math.random() * 100) + 1;
             document.getElementById('display').innerText = `Random Number: ${randomNumber}`;
         }
-    </script>
 
-
-    <br><br>
-    <h1>Multiplication Function</h1>
-
-    <input type="number" id="num1" placeholder="Enter first number">
-    <input type="number" id="num2" placeholder="Enter second number">
-    <button onclick="multiplyNumbers()">Multiply</button>
-
-    <p id="result"></p>
-
-    <script>
         function multiplyNumbers() {
-            // Get the input values
             const num1 = parseFloat(document.getElementById('num1').value);
             const num2 = parseFloat(document.getElementById('num2').value);
 
-            // Check if both inputs are numbers
             if (!isNaN(num1) && !isNaN(num2)) {
                 const product = num1 * num2;
-                document.getElementById('result').innerText = `The product is: ${product}`;
+                document.getElementById('display').innerText = `The product is: ${product}`;
             } else {
-                document.getElementById('result').innerText = "Please enter valid numbers.";
+                document.getElementById('display').innerText = "Please enter valid numbers.";
             }
         }
     </script>
-
-    <br><br>
-
-    <!DOCTYPE html>
-<html>
-<head>
-    <title>Color Changing Button</title>
-    <style>
-        /* Add some basic styles for the button */
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <h1>Color Changing Button</h1>
-
-    <button onclick="changeColor(this)">Change Color</button>
-
-    <script>
-        function changeColor(button) {
-            // Change button color
-            button.style.backgroundColor = "#e74c3c"; // Change to a different color upon click
-        }
-    </script>
-</body>
-</html>
-
-</body>
-</html>
-
 </body>
 </html>
