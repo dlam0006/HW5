@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple JavaScript Functions</title>
+</head>
+<body>
+    <h1>Simple JavaScript Functions</h1>
+
+    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="changeColor()">Change Color</button>
+    <button onclick="displayText()">Display Text</button>
+    <button onclick="countDown()">Countdown</button>
+    <button onclick="generateRandomNumber()">Random Number</button>
+
+    <p id="display"></p>
+
+    <script>
+        function showAlert() {
+            alert('Hello, this is an alert!');
+        }
+
+        function changeColor() {
+            document.body.style.backgroundColor = "lightblue";
+        }
+
+        function displayText() {
+            document.getElementById('display').innerText = "JavaScript is fun!";
+        }
+
+        function countDown() {
+            let count = 5;
+            const interval = setInterval(function() {
+                document.getElementById('display').innerText = `Countdown: ${count}`;
+                count--;
+                if (count < 0) {
+                    clearInterval(interval);
+                    document.getElementById('display').innerText = "Countdown finished!";
+                }
+            }, 1000);
+        }
+
+        function generateRandomNumber() {
+            const randomNumber = Math.floor(Math.random() * 100) + 1;
+            document.getElementById('display').innerText = `Random Number: ${randomNumber}`;
+        }
+    </script>
+</body>
+</html>
